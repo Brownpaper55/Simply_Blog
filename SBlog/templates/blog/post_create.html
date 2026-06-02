@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+</head>
+<body>
+
+    <h1>Create New Post</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <p>
+            <label for="id_title">Title</label><br>
+            <input
+                type="text"
+                name="title"
+                id="id_title"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="id_content">Content</label><br>
+            <textarea
+                name="content"
+                id="id_content"
+                rows="10"
+                cols="50"
+                required
+            ></textarea>
+        </p>
+
+        <button type="submit">
+            Publish Post
+        </button>
+
+    </form>
+
+    <p>
+        <a href="{% url 'post_list' %}">
+            Cancel
+        </a>
+    </p>
+
+</body>
+</html>
